@@ -1,26 +1,27 @@
 import { FC } from "react";
-import { ThemeSwitcher } from "shared/ui/ThemeSwitcher";
-
 import { classNames } from "shared/lib/classNames/classNames";
+import { useTranslation } from "react-i18next";
 
-import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
+import { AppLink } from "shared/ui/AppLink/AppLink";
 
 import cls from "./Navbar.module.scss"
+
 
 interface INavbar {
     className?: string;
 }
 
-export const Navbar: FC<INavbar> = ({className}) => {
+export const Navbar: FC<INavbar> = ({ className }) => {
+    const { t } = useTranslation();
+
     return (  
         <div className={classNames(cls.navbar, {}, [className])}>
-            <ThemeSwitcher />
             <ul className={cls.listLinks}>
                 <li className={cls.listLinks__item}>
-                    <AppLink to={"/"} theme={AppLinkTheme.SECONDARY}>Главная</AppLink>
+                    <AppLink to={"/"}>{t("Главная")}</AppLink>
                 </li>
                 <li className={cls.listLinks__item}>
-                    <AppLink to={"/about"} theme={AppLinkTheme.SECONDARY}>О сайте</AppLink>
+                    <AppLink to={"/about"}>{t("О сайте")}</AppLink>
                 </li>
             </ul>
         </div>
