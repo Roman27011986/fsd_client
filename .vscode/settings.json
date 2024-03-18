@@ -1,0 +1,19 @@
+{
+    "eslint.debug": true,
+    "eslint.format.enable": true,
+    "eslint.useESLintClass": true,
+    "eslint.codeActionsOnSave.mode": "all",
+    "eslint.problems.shortenToSingleLine": false,
+    "eslint.run": "onSave",
+    "editor.defaultFoldingRangeProvider": "dbaeumer.vscode-eslint",
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "eslint.lintTask.enable": true,
+    "eslint.timeBudget.onFixes": {
+        "warn": 3000,
+        "error": 6000
+    },
+    "editor.suggest.preview": true,
+    "files.eol": "\r\n",
+    "prettier.endOfLine": "crlf",
+    "eslint.onIgnoredFiles": "warn"
+}

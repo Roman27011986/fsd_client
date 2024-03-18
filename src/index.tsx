@@ -1,13 +1,13 @@
-import { StrictMode } from "react";
+import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from "react-router-dom";
-import ThemeProvider from "./app/providers/ThemeProvider/ui/ThemeProvider";
+import { BrowserRouter } from 'react-router-dom';
+import ThemeProvider from './app/providers/ThemeProvider/ui/ThemeProvider';
 
-import App from "./app/App";
+import App from './app/App';
 
-import "./shared/config/i18n/i18n";
+import './shared/config/i18n/i18n';
 
-import './app/styles/index.scss'
+import './app/styles/index.scss';
 
 const root = createRoot(
     document.getElementById('root') as HTMLElement,
@@ -17,7 +17,7 @@ root.render(
     <StrictMode>
         <BrowserRouter>
             <ThemeProvider>
-                 <App />
+                <App />
             </ThemeProvider>
         </BrowserRouter>
     </StrictMode>,
