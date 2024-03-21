@@ -15,5 +15,26 @@
     "editor.suggest.preview": true,
     "files.eol": "\r\n",
     "prettier.endOfLine": "crlf",
-    "eslint.onIgnoredFiles": "warn"
+    "eslint.onIgnoredFiles": "warn",
+    "stylelint.configFile": ".stylelintrc.json",
+    "stylelint.snippet": [
+        "css",
+        "less",
+        "postcss",
+        "sass",
+        "scss"
+    ],
+    "stylelint.validate": [
+        "css",
+        "less",
+        "postcss",
+        "sass",
+        "scss"
+    ],
+    "stylelint.stylelintPath": "{**/*,*}.{scss}",
+    "stylelint.reportNeedlessDisables": true,
+    "stylelint.reportInvalidScopeDisables": true,
+    "stylelint.reportDescriptionlessDisables": true,
+    "stylelint.ignoreDisables": false,
+    "stylelint.configBasedir": ".stylelintrc.json"
 }
