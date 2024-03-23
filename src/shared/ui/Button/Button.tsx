@@ -16,7 +16,13 @@ interface IButton extends ButtonHTMLAttributes<HTMLButtonElement>{
 export const Button: FC<IButton> = ({
     children, className, theme, ...otherProps
 }) => (
-    <button type="button" className={classNames(cls.btn, {}, [className, cls[theme]])} {...otherProps}>
+    <button
+        type="button"
+        className={
+            classNames(cls.btn, {}, [className, cls[theme]])
+        }
+        {...otherProps}
+    >
         {children}
     </button>
 );

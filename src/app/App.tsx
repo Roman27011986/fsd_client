@@ -1,6 +1,7 @@
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 import { Navbar } from 'widgets/Navbar';
 import { SideBar } from 'widgets/SideBar';
+import { PageLoader } from 'widgets/PageLoader/PageLoader';
 import { useTheme } from './providers/ThemeProvider/lib/useTheme';
 import { classNames } from '../shared/lib/classNames/classNames';
 import AppRouter from './providers/router/ui/AppRouter';
@@ -10,7 +11,7 @@ function App() {
 
     return (
         <div className={classNames('app', {}, [theme])}>
-            <Suspense fallback="">
+            <Suspense fallback={<PageLoader />}>
                 <Navbar />
                 <div className="content-page">
                     <SideBar />

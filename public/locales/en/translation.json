@@ -4,5 +4,9 @@
     "Главная": "Main",
     "О сайте": "About",
     "Язык": "en",
-    "переключать":"toggle"
+    "переключать": "toggle",
+    "Страница не найдена": "Page not found",
+    "Произошла непредвиденная ошибка": "Something was wrong",
+    "Обновить страницу": "qweqeqwe",
+    "throw error": "throw error"
 }
