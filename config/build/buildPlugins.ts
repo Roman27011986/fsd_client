@@ -18,6 +18,11 @@ export function buildPlugins({ paths, isDev }: IBuildOptions):
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
         }),
-        new BundleAnalyzerPlugin(),
+        new webpack.HotModuleReplacementPlugin(),
+        new BundleAnalyzerPlugin(
+            {
+                openAnalyzer: false,
+            },
+        ),
     ];
 }

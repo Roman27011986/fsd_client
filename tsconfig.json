@@ -12,12 +12,17 @@
     "baseUrl": ".",
     "paths": {
       "*": ["./src/*"]
-    }
+    },
   },
    "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
     }
   },
-  "rules": { "trailing-comma": false }
+  "rules": { "trailing-comma": false },
+  "include": [
+    "./config/jest/setupTests.ts",
+    "./src/**/*.ts",
+    "./src/**/*.tsx"
+  ]
 }
