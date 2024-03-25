@@ -1,3 +1,5 @@
 import { lazy } from 'react';
 
-export const AboutPageAsync = lazy(() => import('./AboutPage' /* webpackChunkName: "AboutPage" */));
+export const AboutPageAsync = lazy(
+    () => import('./AboutPage' /* webpackChunkName: "AboutPage" */),
+);
