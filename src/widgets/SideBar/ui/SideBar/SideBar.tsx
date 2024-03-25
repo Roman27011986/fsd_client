@@ -23,10 +23,14 @@ export const SideBar: FC<ISideBar> = ({ className }) => {
     };
 
     return (
-        <div 
+        <div
             data-testid="sidebar"
             className={
-                classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [className])
+                classNames(
+                    cls.sidebar,
+                    { [cls.collapsed]: collapsed },
+                    [className],
+                )
             }
         >
             <Button
