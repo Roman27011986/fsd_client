@@ -6,7 +6,12 @@ import { LangSwitcher } from 'shared/ui/LangSwitcher';
 import { useTranslation } from 'react-i18next';
 
 import { Button } from 'shared/ui/Button';
-import { ThemeButton } from 'shared/ui/Button/Button';
+import { SizeButton, ThemeButton } from 'shared/ui/Button/Button';
+import { AppLink } from 'shared/ui/AppLink';
+import { RoutePath } from 'shared/config/routerConfig/routerConfig';
+
+import AboutIcon from 'shared/assets/icons/about-20-20.svg';
+import MainIcon from 'shared/assets/icons/main-20-20.svg';
 
 import cls from './SideBar.module.scss';
 
@@ -37,13 +42,42 @@ export const SideBar: FC<ISideBar> = ({ className }) => {
                 data-testid="sidebar-toggle"
                 type="button"
                 onClick={onToggle}
-                theme={ThemeButton.OUTLINE}
+                theme={ThemeButton.BACKGROUND_INVERTED}
+                className={cls.collapseBtn}
+                square
+                size={SizeButton.L}
             >
-                {t('переключать')}
+                {collapsed ? '>' : '<'}
             </Button>
+
+            <ul className={cls.listLinks}>
+                <li className={cls.listLinks__item}>
+                    <AppLink
+                        className={cls.listLinks__link}
+                        to={RoutePath.main}
+                    >
+                        <MainIcon className={cls.listLinks__link__icon} />
+                        <span className={cls.listLinks__link__text}>
+                            {t('Главная')}
+                        </span>
+                    </AppLink>
+                </li>
+                <li className={cls.listLinks__item}>
+                    <AppLink
+                        className={cls.listLinks__link}
+                        to={RoutePath.about}
+                    >
+                        <AboutIcon className={cls.listLinks__link__icon} />
+                        <span className={cls.listLinks__link__text}>
+                            {t('О сайте')}
+                        </span>
+                    </AppLink>
+                </li>
+            </ul>
+
             <div className={cls.switchers}>
                 <ThemeSwitcher />
-                <LangSwitcher className={cls.lang} />
+                <LangSwitcher />
             </div>
         </div>
     );

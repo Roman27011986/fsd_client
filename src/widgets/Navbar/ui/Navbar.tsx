@@ -15,14 +15,7 @@ export const Navbar: FC<INavbar> = ({ className }) => {
 
     return (
         <div className={classNames(cls.navbar, {}, [className])}>
-            <ul className={cls.listLinks}>
-                <li className={cls.listLinks__item}>
-                    <AppLink to="/">{t('Главная')}</AppLink>
-                </li>
-                <li className={cls.listLinks__item}>
-                    <AppLink to="/about">{t('О сайте')}</AppLink>
-                </li>
-            </ul>
+            /
         </div>
     );
 };

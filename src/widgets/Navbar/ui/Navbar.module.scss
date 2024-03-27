@@ -9,11 +9,3 @@
 
     background: var(--inverted-bg-color);
 }
-
-.listLinks {
-    display: flex;
-
-    &__item:not(:last-child) {
-        margin-right: 15px;
-    }
-}

@@ -12,9 +12,10 @@ export enum ThemeButton {
 
 interface ILangSwitcher extends ButtonHTMLAttributes<HTMLButtonElement>{
     className?: string;
+    short?: boolean;
 }
 
-export const LangSwitcher: FC<ILangSwitcher> = ({ className }) => {
+export const LangSwitcher: FC<ILangSwitcher> = ({ className, short }) => {
     const { t, i18n } = useTranslation();
 
     const toggle = () => {
@@ -22,14 +23,12 @@ export const LangSwitcher: FC<ILangSwitcher> = ({ className }) => {
     };
 
     return (
-        <div>
-            <Button
-                className={classNames(cls.langSwitcher, {}, [className])}
-                theme={ThemeButton.CLEAR}
-                onClick={toggle}
-            >
-                {t('Язык')}
-            </Button>
-        </div>
+        <Button
+            className={classNames(cls.langSwitcher, {}, [className])}
+            theme={ThemeButton.CLEAR}
+            onClick={toggle}
+        >
+            {t('Язык')}
+        </Button>
     );
 };
