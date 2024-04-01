@@ -6,8 +6,6 @@ import { useTheme } from './providers/ThemeProvider/lib/useTheme';
 import { classNames } from '../shared/lib/classNames/classNames';
 import AppRouter from './providers/router/ui/AppRouter';
 
-import './styles/index.scss';
-
 function App() {
     const { theme } = useTheme();
 

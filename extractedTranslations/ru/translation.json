@@ -1,6 +1,16 @@
 {
+  "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
+    " Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam": {
+      "": ""
+    }
+  },
+  "decrement": "decrement",
+  "increment": "increment",
   "throw err": "throw err",
   "throw error": "throw error",
+  "Введите username": "Введите username",
+  "Введите пароль": "Введите пароль",
+  "Войти": "Войти",
   "Главная": "Главная",
   "О сайте": "О сайте",
   "Обновить страницу": "Обновить страницу",
