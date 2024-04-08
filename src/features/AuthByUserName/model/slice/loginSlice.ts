@@ -4,7 +4,7 @@ import { loginByUserName } from '../services/loginByUserName/loginByUserName';
 
 const initialState: ILoginSchema = {
     isLoading: false,
-    error: null,
+    error: '',
     userName: '',
     password: '',
 };

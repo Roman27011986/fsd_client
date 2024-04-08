@@ -3,10 +3,10 @@ import { Navbar } from 'widgets/Navbar';
 import { SideBar } from 'widgets/SideBar';
 import { PageLoader } from 'widgets/PageLoader/PageLoader';
 import { userActions } from 'entities/User';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useTheme } from './providers/ThemeProvider/lib/useTheme';
 import { classNames } from '../shared/lib/classNames/classNames';
 import AppRouter from './providers/router/ui/AppRouter';
-import { useAppDispatch } from './providers/StoreProvider/ui/StoreProvider';
 
 function App() {
     const { theme } = useTheme();

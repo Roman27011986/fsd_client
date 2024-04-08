@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes, FC } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { Mods, classNames } from 'shared/lib/classNames/classNames';
 
 import cls from './Button.module.scss';
 
@@ -27,9 +27,9 @@ interface IButton extends ButtonHTMLAttributes<HTMLButtonElement>{
 }
 
 export const Button: FC<IButton> = ({
-    children, className, theme, square, size, disabled, ...otherProps
+    children, className, theme = ThemeButton.OUTLINE, square, size = '', disabled, ...otherProps
 }) => {
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [cls.square]: square,
         [cls[size]]: true,
         [cls.disabled]: disabled,

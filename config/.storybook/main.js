@@ -1,4 +1,5 @@
 const path = require('path');
+const { DefinePlugin } = require('webpack');
 const { buildCssLoader } = require('../build/loaders/buildCssLoader');
 
 module.exports = {
@@ -46,6 +47,11 @@ module.exports = {
             test: /\.svg$/,
             use: ['@svgr/webpack'],
         });
+
+        config.pligins.push(new DefinePlugin({
+            __IS_DEV__: JSON.stringify(true),
+            __API__: JSON.stringify(''),
+        }));
 
         config.module.rules.push(buildCssLoader(true));
         return config;

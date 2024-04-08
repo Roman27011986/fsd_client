@@ -1,27 +1,38 @@
 import { ReactNode } from 'react';
 import {
-    Provider, TypedUseSelectorHook, useDispatch, useSelector,
+    Provider,
 } from 'react-redux';
-import { createAsyncThunk } from '@reduxjs/toolkit';
-import { createReduxStore } from '../config/store';
+import {
+    ReducersMapObject, createAsyncThunk,
+} from '@reduxjs/toolkit';
+import { useNavigate } from 'react-router-dom';
+import { AppDispatch, createReduxStore } from '../config/store';
 import { StateSchema } from '../config/StateSchema';
 
-export type DeepPartial<T> = {
-    [K in keyof T]?: T[K] extends object ? DeepPartial<T[K]> : T[K]
-}
+export type DeepPartial<T> = T extends object ? {
+    [P in keyof T]?: DeepPartial<T[P]>;
+} : T;
 
 interface IStoreProvider {
     children?: ReactNode;
     initialState?: DeepPartial<StateSchema>;
+    asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>
 }
-
-const store = createReduxStore();
 
 export const StoreProvider = (props: IStoreProvider) => {
     const {
         children,
         initialState,
+        asyncReducers,
     } = props;
+
+    const navigate = useNavigate();
+
+    const store = createReduxStore(
+        initialState as StateSchema,
+        asyncReducers as ReducersMapObject<StateSchema>,
+        navigate,
+    );
 
     return (
         <Provider store={store}>
@@ -30,12 +41,9 @@ export const StoreProvider = (props: IStoreProvider) => {
     );
 };
 
-export type AppDispatch = typeof store.dispatch;
-// export type RootState = ReturnType<typeof store.getState>;
-
-export const useAppDispatch: () => typeof store.dispatch = useDispatch;
+// export type AppDispatch = typeof store.dispatch;
+// export const useAppDispatch: () => typeof store.dispatch = useDispatch;
 // export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
-
 // export const createAppAsyncThunk = createAsyncThunk.withTypes<{
 //     state: RootState;
 //     dispatch: AppDispatch;

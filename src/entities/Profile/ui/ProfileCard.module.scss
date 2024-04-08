@@ -1,0 +1,22 @@
+.profile {
+    &__card {
+       padding: 20px; 
+       border: 2px solid var(--inverted-bg-color);
+    }
+
+    &__header {
+        display: flex;
+    }
+
+    &__editBtn {
+        margin-left: auto;
+    }
+
+    &__data {
+        margin-top: 30px;
+    }
+
+    &__input {
+        margin-top: 10px;
+    }
+}

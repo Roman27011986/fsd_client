@@ -16,10 +16,10 @@ export function useTheme(): IUseThemeResult {
     const handleToggleTheme = () => {
         const newTheme = theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT;
 
-        setTheme(newTheme);
+        setTheme?.(newTheme);
 
         localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
     };
 
-    return { theme, handleToggleTheme };
+    return { theme: theme || Theme.LIGHT, handleToggleTheme };
 }
