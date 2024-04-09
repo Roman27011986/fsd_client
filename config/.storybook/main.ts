@@ -32,10 +32,9 @@ module.exports = {
             src: path.resolve(__dirname, '..', '..', 'src'),
         };
 
-        config.resolve.modules.push(paths.src);
-        config.resolve.extensions.push('.ts', '.tsx');
+        config.resolve.modules?.push(paths.src);
+        config.resolve.extensions?.push('.ts', '.tsx');
 
-        // eslint-disable-next-line no-param-reassign
         config.module.rules = config.module.rules.map((rule) => {
             if (/svg/.test(rule.test)) {
                 return { ...rule, exclude: /\.svg$/i };
@@ -43,17 +42,17 @@ module.exports = {
             return rule;
         });
 
-        config.module.rules.push({
+        config.module.rules?.push({
             test: /\.svg$/,
             use: ['@svgr/webpack'],
         });
 
-        config.pligins.push(new DefinePlugin({
+        config.pligins?.push(new DefinePlugin({
             __IS_DEV__: JSON.stringify(true),
             __API__: JSON.stringify(''),
         }));
 
-        config.module.rules.push(buildCssLoader(true));
+        config.module.rules?.push(buildCssLoader(true));
         return config;
     },
 };
