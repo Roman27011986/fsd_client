@@ -7,18 +7,26 @@ export enum TextTheme {
    ERROR = 'error',
 }
 
+export enum TextAlign {
+    RIGHT = 'right',
+    LEFT = 'left',
+    CENTER = 'center',
+ }
+
 interface IText {
     className?: string;
     title?: string;
     text?: string;
     theme?: TextTheme;
+    align?: TextAlign;
 }
 
 export const Text = ({
-    className, title, text, theme = TextTheme.PRIMARY,
+    className, title, text, theme = TextTheme.PRIMARY, align = TextAlign.LEFT,
 }:IText) => {
     const mods: Record<string, boolean> = {
         [cls[theme]]: true,
+        [cls[align]]: true,
     };
 
     return (
