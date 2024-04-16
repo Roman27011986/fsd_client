@@ -13,7 +13,7 @@ import cls from './ProfileCard.module.scss';
 
 interface IProfileCard {
     className?: string;
-    data: IProfile | null;
+    data: IProfile | undefined;
     isLoading?: boolean;
     error?: string;
     readonly?: boolean;

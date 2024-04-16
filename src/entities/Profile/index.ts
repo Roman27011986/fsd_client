@@ -25,3 +25,4 @@ export { getProfileForm } from './model/selectors/getProfileForm/getProfileForm'
 export { getProfileIsLoading } from 'entities/Profile/model/selectors/getProfileIsLoading/getProfileIsLoading';
 export { getProfileError } from 'entities/Profile/model/selectors/getProfileError/getProfileError';
 export { getProfileReadonly } from './model/selectors/getProfileReadonly/getProfileReadonly';
+export { getProfileValidateErrors } from './model/selectors/getProfileValidateErrors/getProfileValidateErrors';

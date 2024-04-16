@@ -9,6 +9,9 @@ IProfile, void, IThunkConfig<string>
     async (_, thunkAPI) => {
         try {
             const response = await thunkAPI.extra.api.get<IProfile>('/profile');
+            if (!response.data) {
+                throw new Error();
+            }
             return response.data;
         } catch (error) {
             return thunkAPI.rejectWithValue('Вы ввели неверный логин или пароль');

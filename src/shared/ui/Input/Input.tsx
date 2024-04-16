@@ -25,7 +25,7 @@ export const Input: FC<IInput> = memo((props: IInput) => {
         type = 'text',
         placeholder,
         autofocus,
-        readonly = true,
+        readonly = false,
         ...otherProps
     } = props;
 
