@@ -3,10 +3,10 @@ import {
     Provider,
 } from 'react-redux';
 import {
-    ReducersMapObject, createAsyncThunk,
+    ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { useNavigate } from 'react-router-dom';
-import { AppDispatch, createReduxStore } from '../config/store';
+import { createReduxStore } from '../config/store';
 import { StateSchema } from '../config/StateSchema';
 
 export type DeepPartial<T> = T extends object ? {

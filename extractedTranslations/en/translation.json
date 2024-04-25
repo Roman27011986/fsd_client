@@ -1,5 +1,10 @@
 {
   "": "",
+  "ArticleCodeBlockComponent": "ArticleCodeBlockComponent",
+  "ArticleDetails": "ArticleDetails",
+  "ArticleImageBlockComponent": "ArticleImageBlockComponent",
+  "ArticlesDetailsPage": "ArticlesDetailsPage",
+  "ArticlesPage": "ArticlesPage",
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
     " Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam": {
       "": ""
@@ -7,6 +12,7 @@
   },
   "ProfilePage": "ProfilePage",
   "decrement": "decrement",
+  "error": "error",
   "increment": "increment",
   "throw err": "throw err",
   "throw error": "throw error",
@@ -27,9 +33,14 @@
   "Попробуйте обновить страницу": "Попробуйте обновить страницу",
   "Произошла непредвиденная ошибка": "Произошла непредвиденная ошибка",
   "Произошла ошибка при загрузке профиля": "Произошла ошибка при загрузке профиля",
+  "Произошла ошибка при загрузке статьи": {
+    "": ""
+  },
+  "Произошла ошибка при загрузке статьию": "Произошла ошибка при загрузке статьию",
   "Профиль": "Профиль",
   "Редактировать": "Редактировать",
   "Сохранить": "Сохранить",
+  "Статья не найдена": "Статья не найдена",
   "Страница не найдена": "Страница не найдена",
   "Форма авторизации": "Форма авторизации",
   "Язык": "Язык",
