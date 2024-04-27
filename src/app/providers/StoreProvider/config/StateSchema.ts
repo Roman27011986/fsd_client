@@ -6,6 +6,7 @@ import { IArticleDetailsSchema } from 'entities/Article';
 import { IProfileSchema } from 'entities/Profile';
 import { IUserSchema } from 'entities/User';
 import { ILoginSchema } from 'features/AuthByUserName';
+import { IArticleDetailsCommentsSchema } from 'pages/ArticlesDetailsPage';
 import { NavigateOptions, To } from 'react-router-dom';
 
 export interface StateSchema {
@@ -13,6 +14,7 @@ export interface StateSchema {
     loginForm?: ILoginSchema;
     profile?: IProfileSchema;
     articleDetails?: IArticleDetailsSchema;
+    articleDetailsComments?: IArticleDetailsCommentsSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

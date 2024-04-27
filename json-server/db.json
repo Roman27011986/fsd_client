@@ -107,13 +107,15 @@
       "id": "1",
       "userName": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://static.wikia.nocookie.net/warner-parks/images/7/72/Alf.jpg/revision/latest?cb=20170411155121"
     },
     {
       "id": "2",
       "userName": "user",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://static.wikia.nocookie.net/warner-parks/images/7/72/Alf.jpg/revision/latest?cb=20170411155121"
     }
   ],
   "profile": {
