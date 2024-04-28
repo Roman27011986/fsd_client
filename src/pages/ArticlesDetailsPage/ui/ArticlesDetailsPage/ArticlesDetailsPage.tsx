@@ -14,12 +14,17 @@ import {
     getArticleCommentsError,
     getArticleCommentsIsLoading,
 } from 'pages/ArticlesDetailsPage/model/selectors/comments';
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 import {
     fetchCommentsByArticleId,
 } from 'pages/ArticlesDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { AddCommentForm } from 'features/AddCommentForm';
+import {
+    addCommentForArticle,
+} from 'pages/ArticlesDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
+import { getAddCommentFormText } from 'features/AddCommentForm/model/selectors/AddCommentFormSelectors';
 import cls from './ArticlesDetailsPage.module.scss';
 
 const reducers: ReducersList = {
@@ -40,6 +45,12 @@ const ArticlesDetailsPage = () => {
         }
     }, [dispatch, id]);
 
+    const onSendComment = useCallback((text: string) => {
+        if (text) {
+            dispatch(addCommentForArticle(text));
+        }
+    }, [dispatch]);
+
     if (!id) {
         return (
             <div>
@@ -53,6 +64,7 @@ const ArticlesDetailsPage = () => {
             <div>
                 <ArticleDetails id={id} />
                 <Text className={cls.commentTitle} title={t('Коментарии')} />
+                <AddCommentForm onSendComment={onSendComment} />
                 <CommentList
                     isLoading={isLoading}
                     comments={comments}

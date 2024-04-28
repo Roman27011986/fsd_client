@@ -2,7 +2,6 @@ import {
     fetchProfileData,
     profileReducer,
     ProfileCard,
-    getProfileData,
     getProfileForm,
     getProfileIsLoading,
     getProfileError,
@@ -20,6 +19,7 @@ import { Country } from 'entities/Country';
 import { Text } from 'shared/ui/Text';
 import { TextTheme } from 'shared/ui/Text/Text';
 import { ValidateProfileError } from 'entities/Profile/model/types/profile';
+import { useParams } from 'react-router-dom';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const initialsReducers: ReducersList = {
@@ -35,6 +35,7 @@ const ProfilePage = () => {
     const error = useSelector(getProfileError);
     const readonly = useSelector(getProfileReadonly);
     const validateErrors = useSelector(getProfileValidateErrors);
+    const { id } = useParams();
 
     const validateErrorTranslates = {
         [ValidateProfileError.SERVER_ERROR]: t(ValidateProfileError.SERVER_ERROR),
@@ -45,10 +46,10 @@ const ProfilePage = () => {
     };
 
     useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchProfileData());
+        if (__PROJECT__ !== 'storybook' && id) {
+            dispatch(fetchProfileData(id));
         }
-    }, [dispatch]);
+    }, [dispatch, id]);
 
     const onChangeFirstName = useCallback((value: string) => {
         dispatch(profileActions.updateProfile({ first: value }));

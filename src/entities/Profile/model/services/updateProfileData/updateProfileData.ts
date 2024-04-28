@@ -18,7 +18,7 @@ IProfile, void, IThunkConfig<ValidateProfileError[]>
         }
 
         try {
-            const response = await thunkAPI.extra.api.put<IProfile>('/profile', formData);
+            const response = await thunkAPI.extra.api.put<IProfile>(`/profile/${formData?.id}`, formData);
 
             if (!response.data) {
                 throw new Error();

@@ -19,7 +19,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -100,6 +102,42 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "wewe",
+      "id": "O6Zb4pS"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "qqwe",
+      "id": "V_UWKqY"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "rrr",
+      "id": "Hqbxxeo"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "bbbb",
+      "id": "zEVLAme"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "&&&&",
+      "id": "9JeJUA-"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "pro",
+      "id": "Lwadwu7"
     }
   ],
   "users": [
@@ -116,16 +154,37 @@
       "password": "123",
       "role": "USER",
       "avatar": "https://static.wikia.nocookie.net/warner-parks/images/7/72/Alf.jpg/revision/latest?cb=20170411155121"
+    },
+    {
+      "id": "3",
+      "userName": "user",
+      "password": "123",
+      "role": "USER",
+      "avatar": "https://static.wikia.nocookie.net/warner-parks/images/7/72/Alf.jpg/revision/latest?cb=20170411155121"
     }
   ],
-  "profile": {
-    "first": "Роман",
-    "lastname": "Нестеренко",
-    "age": 38,
-    "currency": "EUR",
-    "country": "Russia",
-    "city": "Mariupol",
-    "username": "admin",
-    "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Роман",
+      "lastname": "Нестеренко",
+      "age": 38,
+      "currency": "EUR",
+      "country": "Russia",
+      "city": "Mariupol",
+      "username": "admin",
+      "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
+    },
+    {
+      "id": "2",
+      "first": "Тоша",
+      "lastname": "Той",
+      "age": 10,
+      "currency": "EUR",
+      "country": "Russia",
+      "city": "Mariupol",
+      "username": "admin2",
+      "avatar": "https://static.wikia.nocookie.net/warner-parks/images/7/72/Alf.jpg/revision/latest?cb=20170411155121"
+    }
+  ]
 }
