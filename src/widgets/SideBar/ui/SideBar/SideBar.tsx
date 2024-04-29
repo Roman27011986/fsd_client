@@ -4,7 +4,8 @@ import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { LangSwitcher } from 'shared/ui/LangSwitcher';
 import { Button } from 'shared/ui/Button';
 import { SizeButton, ThemeButton } from 'shared/ui/Button/Button';
-import { SideBarItemsList } from 'widgets/SideBar/model/items';
+import { useSelector } from 'react-redux';
+import { getSideBarItems } from 'widgets/SideBar/model/selectors/getSideBarItems';
 import { SideBarItem } from '../SideBarItem/SideBarItem';
 
 import cls from './SideBar.module.scss';
@@ -15,6 +16,8 @@ interface ISideBar {
 
 export const SideBar: FC<ISideBar> = ({ className }) => {
     const [collapsed, setCollapsed] = useState(false);
+
+    const sideBarItemsList = useSelector(getSideBarItems);
 
     const onToggle = () => {
         setCollapsed((p) => !p);
@@ -44,7 +47,7 @@ export const SideBar: FC<ISideBar> = ({ className }) => {
             </Button>
 
             <ul className={cls.listLinks}>
-                {SideBarItemsList.map((item) => (
+                {sideBarItemsList.map((item) => (
                     <li key={item.text} className={cls.listLinks__item}>
                         <SideBarItem item={item} collapsed={collapsed} />
                     </li>
