@@ -2,6 +2,7 @@ import { IArticleTextBlock } from 'entities/Article/model/types/article';
 import { useTranslation } from 'react-i18next';
 import { Text } from 'shared/ui/Text';
 
+import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './ArticleTextBlockComponent.module.scss';
 
 interface IArticleTextBlockComponent {
@@ -13,7 +14,7 @@ export const ArticleTextBlockComponent = ({ className, block }: IArticleTextBloc
     const { t } = useTranslation('article');
 
     return (
-        <div>
+        <div className={classNames('', {}, [className])}>
             {block?.title && (
                 <Text title={block.title} className={cls.title} />
             )}

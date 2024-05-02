@@ -1,0 +1,111 @@
+.BIG {
+    .articleListItem {
+        &__header {
+            display: flex;
+            align-items: center;
+
+            &__userName {
+                margin-left: 8px;
+            }
+
+            &__date {
+                margin-left: auto;
+            }
+        }
+
+        &__title {
+            margin-top: 8px;
+        }
+
+        &__img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+            margin: 16px 0;
+        }
+
+        &__textBlock {
+            max-height: 200px;
+            overflow-y: hidden;
+        }
+
+        &__footer {
+            display: flex;
+            align-items: center;
+            margin-top: 16px;
+
+            &__views {
+                margin-left: auto;
+            }
+        }
+    }
+}
+
+.SMALL {
+    width: 230px;
+    transition: all 300ms;
+    cursor: pointer;
+
+     &:hover {
+        opacity: 0.8;
+        transform: scale(1.01);
+
+        .articleListItem {
+            &__imgWrapper {
+                &__date {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .articleListItem {
+        &__title {
+            margin-top: 8px;
+        }
+
+        &__title p {
+            width: 200px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        &__imgWrapper {
+            width: 200px;
+            height: 200px;
+            position: relative;
+
+            &__img {
+                width: 200px;
+                height: 200px;
+                object-fit: cover;
+            }
+
+            &__date {
+                display: none;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+        }
+
+        &__infoWrapper {
+            display: flex;
+            align-items: center;
+            margin-top: 8px;
+
+            &__types p {
+                width: 115px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            &__views {
+                margin-left: auto;
+                margin-right: 8px;
+            }
+        }
+    }
+}

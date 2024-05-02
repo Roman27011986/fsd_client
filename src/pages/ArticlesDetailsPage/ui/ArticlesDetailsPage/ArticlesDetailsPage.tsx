@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ArticleDetails } from 'entities/Article';
 import { Text } from 'shared/ui/Text';
@@ -25,6 +25,8 @@ import {
     addCommentForArticle,
 } from 'pages/ArticlesDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
 import { getAddCommentFormText } from 'features/AddCommentForm/model/selectors/AddCommentFormSelectors';
+import { Button } from 'shared/ui/Button';
+import { RoutePath } from 'shared/config/routerConfig/routerConfig';
 import cls from './ArticlesDetailsPage.module.scss';
 
 const reducers: ReducersList = {
@@ -35,6 +37,7 @@ const ArticlesDetailsPage = () => {
     const { t } = useTranslation('article');
     const { id } = useParams<{ id: string }>();
     const dispatch = useAppDispatch();
+    const navigate = useNavigate();
     const comments = useSelector(getArticleComments.selectAll);
     const isLoading = useSelector(getArticleCommentsIsLoading);
     const error = useSelector(getArticleCommentsError);
@@ -51,6 +54,10 @@ const ArticlesDetailsPage = () => {
         }
     }, [dispatch]);
 
+    const onBackToList = useCallback(() => {
+        navigate(RoutePath.articles);
+    }, [navigate]);
+
     if (!id) {
         return (
             <div>
@@ -62,6 +69,7 @@ const ArticlesDetailsPage = () => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <div>
+                <Button onClick={onBackToList}>{t('Назад к списку')}</Button>
                 <ArticleDetails id={id} />
                 <Text className={cls.commentTitle} title={t('Коментарии')} />
                 <AddCommentForm onSendComment={onSendComment} />
