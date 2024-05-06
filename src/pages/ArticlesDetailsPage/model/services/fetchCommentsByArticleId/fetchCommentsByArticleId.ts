@@ -6,11 +6,11 @@ export const fetchCommentsByArticleId = createAsyncThunk<
 IComment[], string, IThunkConfig<string>
 >(
     'articleDetails/fetchCommentsByArticleId',
-    async (aid, thunkAPI) => {
+    async (articleId, thunkAPI) => {
         try {
             const response = await thunkAPI.extra.api.get<IComment[]>('/comments', {
                 params: {
-                    aid,
+                    articleId,
                     _expand: 'user',
                 },
             });
