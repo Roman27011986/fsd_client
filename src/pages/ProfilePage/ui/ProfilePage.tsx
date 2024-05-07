@@ -20,13 +20,19 @@ import { Text } from 'shared/ui/Text';
 import { TextTheme } from 'shared/ui/Text/Text';
 import { ValidateProfileError } from 'entities/Profile/model/types/profile';
 import { useParams } from 'react-router-dom';
+import { Page } from 'shared/ui/Page/Page';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const initialsReducers: ReducersList = {
     profile: profileReducer,
 };
 
-const ProfilePage = () => {
+interface IProfilePageProps {
+    className?: string;
+}
+
+const ProfilePage = ({ className }: IProfilePageProps) => {
     const { t } = useTranslation('profile');
     const dispatch = useAppDispatch();
 
@@ -85,7 +91,7 @@ const ProfilePage = () => {
 
     return (
         <DynamicModuleLoader reducers={initialsReducers} removeAfterUnmount>
-            <div>
+            <Page className={classNames('', {}, [className])}>
                 <ProfilePageHeader />
                 {validateErrors?.length && validateErrors.map((err) => (
                     <Text key={err} theme={TextTheme.ERROR} text={validateErrorTranslates[err]} />
@@ -104,7 +110,7 @@ const ProfilePage = () => {
                     onChangeCarrency={onChangeCurrency}
                     onChangeCountry={onChangeCountry}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };

@@ -24,14 +24,6 @@ export const ArticleList = ({
 }: IArticleList) => {
     const { t } = useTranslation();
 
-    if (isLoading) {
-        return (
-            <div className={classNames(cls.articleList, {}, [className, cls[view]])}>
-                {getSkeletons(view)}
-            </div>
-        );
-    }
-
     const renderArticle = (article: IArticle) => (
         <ArticleListItem
             article={article}
@@ -48,6 +40,7 @@ export const ArticleList = ({
                     renderArticle(article)
                 ))
                 : null}
+            {isLoading && getSkeletons(view)}
         </div>
     );
 };

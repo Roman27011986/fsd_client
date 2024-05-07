@@ -27,6 +27,7 @@ import {
 import { getAddCommentFormText } from 'features/AddCommentForm/model/selectors/AddCommentFormSelectors';
 import { Button } from 'shared/ui/Button';
 import { RoutePath } from 'shared/config/routerConfig/routerConfig';
+import { Page } from 'shared/ui/Page/Page';
 import cls from './ArticlesDetailsPage.module.scss';
 
 const reducers: ReducersList = {
@@ -60,15 +61,15 @@ const ArticlesDetailsPage = () => {
 
     if (!id) {
         return (
-            <div>
+            <Page>
                 {t('Статья не найдена')}
-            </div>
+            </Page>
         );
     }
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <div>
+            <Page>
                 <Button onClick={onBackToList}>{t('Назад к списку')}</Button>
                 <ArticleDetails id={id} />
                 <Text className={cls.commentTitle} title={t('Коментарии')} />
@@ -77,7 +78,7 @@ const ArticlesDetailsPage = () => {
                     isLoading={isLoading}
                     comments={comments}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
 
     );

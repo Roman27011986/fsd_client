@@ -46,7 +46,7 @@ export const ProfileCard = ({
 
     if (isLoading) {
         return (
-            <div className={classNames(cls.profile__card, {}, [className, cls.loading])}>
+            <div className={classNames(cls.profile__card, { [cls.loading]: true }, [className])}>
                 <Loader />
             </div>
         );
